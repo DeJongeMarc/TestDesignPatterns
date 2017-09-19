@@ -15,7 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        String bestandsnaam = "H:/Eiland.txt";
+        String bestandsnaam = "C:/Users/marc.de.jonge/Documents/NetBeansProjects/TestDesignPatterns/Eiland.txt";
         Eiland eiland = Eiland.getInstance();
         List<Inwoner> inwoners = new ArrayList<>();
         
