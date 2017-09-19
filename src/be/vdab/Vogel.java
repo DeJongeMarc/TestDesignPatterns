@@ -1,5 +1,6 @@
 package be.vdab;
 
+import java.beans.PropertyChangeEvent;
 import java.util.Observable;
 /**
  *
@@ -12,7 +13,11 @@ public class Vogel extends Inwoner {
     }
     
     @Override
-    public void update(Observable observable, Object argument){
+    public void propertyChange(PropertyChangeEvent evt) {
+        if(evt.getPropertyName().equals(Eiland.ORKAAN)){
+            System.out.println(getNaam() + " vlieg naar een ander eiland.");
+        }else{
         System.out.println(getNaam() + " vlieg hoger.");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package be.vdab;
 
+import java.beans.PropertyChangeEvent;
 import java.util.Observable;
 /**
  *
@@ -12,7 +13,15 @@ public class Zoogdier extends Inwoner {
     }
     
     @Override
-    public void update(Observable observable, Object argument){
-        System.out.println(getNaam() + " schuil in je hol");
+    public void propertyChange(PropertyChangeEvent evt) {
+        switch(evt.getPropertyName()){
+            case Eiland.AARDBEVING:
+                System.out.println(getNaam() + " kruip uit je hol en ga naar een open vlakte");
+                break;
+            case Eiland.VULKAANUITBARSTING:
+            case Eiland.ORKAAN:
+                System.out.println(getNaam() + " schuil in je hol");
+                break;
+        }
     }
 }

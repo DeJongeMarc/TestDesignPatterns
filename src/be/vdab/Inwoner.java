@@ -1,12 +1,13 @@
 package be.vdab;
 
+import java.beans.PropertyChangeListener;
 import java.util.Observer;
 
 /**
  *
  * @author marcdejonge
  */
-public abstract class Inwoner implements Observer {
+public abstract class Inwoner implements PropertyChangeListener {
 
     private String naam;
     

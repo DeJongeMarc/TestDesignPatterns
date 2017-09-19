@@ -24,12 +24,14 @@ public class Main {
             while (regel != null) {
                 Inwoner eenInwoner = InwonerFactory.INSTANCE.create(regel);
                 inwoners.add(eenInwoner);
-                eiland.addObserver(eenInwoner);
+                eiland.addPropertyChangeListener(eenInwoner);
                 regel = reader.readLine();
             }
         } catch (IOException e) {
             System.out.println("File niet gevonden");
         }
         eiland.vulkaanuitbarsting();
+        eiland.aardbeving();
+        eiland.orkaan();
     } 
 }
